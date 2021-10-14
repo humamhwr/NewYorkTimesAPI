@@ -9,8 +9,8 @@ var limit = "limit=1"; // number of articles shown, needs to be completed link t
 $.ajax({
   url: queryURL + searchTermQ + apiKey, // + limit
 
-  method: "GET"
-}).then(function(response) {
+  method: "GET",
+}).then(function (response) {
   var results = response.data;
   console.log(response);
 });
