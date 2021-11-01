@@ -25,18 +25,6 @@
         <i class="far fa-list-alt"></i> Search Parameters
       </div>
       <div class="col-12" id="formbody">
-        <!-- <form> -->
-        <!-- PROBLEMATIC PLACING SEARCH BAR IN HERE -->
-        <!-- <div class="form-group">
-          <label for="searchTerm">Search Term:</label>
-          <input
-            type="term"
-            class="form-control"
-            id="searchTerm"
-            placeholder="Enter a term to search"
-          />
-        </div> -->
-
         <div class="form-group">
           <label for="recordNumber">Number of Records to Retrieve</label>
           <br />
@@ -44,39 +32,32 @@
             <option value="1">1</option>
             <option value="5">5</option>
             <option value="10">10</option>
-            <!-- <option value="15">15</option> -->
           </select>
         </div>
         <div class="form-group">
-          <!-- <label for="articleStartYear">Start Year (Optional)</label> -->
-          <label for="articleStartYear">Start Year</label>
+          <label for="articleStartYear">Year</label>
           <input
             type="term"
             class="form-control"
-            id="startYear"
+            id="year"
             placeholder="Enter a year"
           />
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="articleEndYear">End Year</label>
-          <!-- <label for="articleEndYear">End Year (Optional)</label> -->
           <input
             type="term"
             class="form-control"
             id="endYear"
             placeholder="Enter a year"
           />
-        </div>
+        </div> -->
 
         <div class="form-group">
           <button type="search" class="btn" onclick="executeJSON()">
             <i class="fas fa-search"></i> Search
           </button>
-          <!-- <button type="clear" class="btn">
-            <i class="fas fa-trash-alt"></i> Clear Results
-          </button> -->
         </div>
-        <!-- </form> -->
       </div>
 
       <div class="col-12" id="topArticlesheader">
