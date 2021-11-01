@@ -2,12 +2,18 @@
 Fetch json data
 ********************/
 function executeJSON() {
+  // Empty Top Articles text
+  document.getElementById("retrievedArticles").innerText = "";
+
+  // UNUSED
   // const url =
   // "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=SAiMm3TGavwAZGVZQQXSSYnpj8jUUIdF";
 
+  // UNUSED
   // const url =
   //   "https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20100101&end_date=20211031&api-key=SAiMm3TGavwAZGVZQQXSSYnpj8jUUIdF";
 
+  // Grab form values
   let startYear = document.getElementById("startYear").value;
   let endYear = document.getElementById("endYear").value;
   let pageNumber = getRandomInt(10);
@@ -24,6 +30,10 @@ function executeJSON() {
     // for (let i = 0; i < data.response.docs.length; i++) {
     for (let i = 0; i < numRecords; i++) {
       console.log(data.response.docs[i].headline.main);
+
+      // Display retrieved articles
+      document.getElementById("retrievedArticles").innerText +=
+        data.response.docs[i].headline.main;
     }
   })
     //fail
