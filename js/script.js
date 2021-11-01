@@ -1,40 +1,29 @@
 /*******************
-Fetch json data
+Fetch json data and display result in "Articles Found"
 ********************/
 function executeJSON() {
   // Empty Top Articles text
   document.getElementById("retrievedArticles").innerText = "";
 
-  // UNUSED
-  // const url =
-  // "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=SAiMm3TGavwAZGVZQQXSSYnpj8jUUIdF";
-
-  // UNUSED
-  // const url =
-  //   "https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20100101&end_date=20211031&api-key=SAiMm3TGavwAZGVZQQXSSYnpj8jUUIdF";
-
   // Grab form values
   let year = document.getElementById("year").value;
-  // let endYear = document.getElementById("endYear").value;
+  let numRecords = document.getElementById("numRecords").value;
+  // Randomize page number to choose a random article
   let pageNumber = getRandomInt(10);
 
-  let numRecords = document.getElementById("numRecords").value;
-
-  console.log(numRecords, year);
-
-  // const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=${startYear}0101&end_date=${endYear}1231&page=${pageNumber}&api-key=SAiMm3TGavwAZGVZQQXSSYnpj8jUUIdF`;
+  // URL to API JSON file
   const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=${year}0101&page=${pageNumber}&api-key=SAiMm3TGavwAZGVZQQXSSYnpj8jUUIdF`;
 
   $.getJSON(url, function (data) {
     //success
     console.log(data);
 
+    // Display retrieved articles
     for (let i = 0; i < numRecords; i++) {
-      // Display retrieved articles
-      // Headline
+      // Display headline
       document.getElementById("retrievedArticles").innerText +=
         data.response.docs[i].headline.main;
-      // Section name
+      // Display section name
       document.getElementById("retrievedArticles").innerText +=
         data.response.docs[i].section_name;
     }
