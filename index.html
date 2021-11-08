@@ -5,76 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>New York Times Article Search</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <div class="container-fluid">
       <div class="col-12" id="header">
-        <h1><i class="far fa-newspaper"></i> New York Times Search</h1>
+        <img class="logo-image" src="assets/nyt.png" alt="logo">
+        <h2>cart351</h2>
       </div>
+
       <div class="col-12" id="formheader">
         <i class="far fa-list-alt"></i> Search Parameters
       </div>
       <div class="col-12" id="formbody">
-        <form>
-          <div class="form-group">
-            <label for="searchTerm">Search Term:</label>
-            <input
-              type="term"
-              class="form-control"
-              id="searchTerm"
-              placeholder="Enter a term to search"
-            />
-          </div>
+        <div class="form-group">
+          <label for="recordNumber">Number of Records to Retrieve</label>
+          <br />
+          <select name="numbers" id="numRecords">
+            <option value="1">1</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="articleStartYear">Year</label>
+          <input
+            type="term"
+            class="form-control"
+            id="year"
+            placeholder="Enter a year"
+          />
+        </div>
 
-          <div class="form-group">
-            <label for="recordNumber">Number of Records to Retrieve</label>
-            <br />
-            <select name="numbers">
-              <option value="5">5</option>
-              <option value="10">10</option>
-              <option value="15">15</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="articleStartYear">Start Year (Optional)</label>
-            <input
-              type="term"
-              class="form-control"
-              id="startYear"
-              placeholder="Enter a year"
-            />
-          </div>
-          <div class="form-group">
-            <label for="articleEndYear">End Year (Optional)</label>
-            <input
-              type="term"
-              class="form-control"
-              id="endYear"
-              placeholder="Enter a year"
-            />
-          </div>
-          <div class="form-group">
-            <button type="search" class="btn">
-              <i class="fas fa-search"></i> Search
-            </button>
-            <button type="clear" class="btn">
-              <i class="fas fa-trash-alt"></i> Clear Results
-            </button>
-          </div>
-        </form>
+        <div class="form-group">
+          <button type="search" class="btn" onclick="executeJSON()">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
       </div>
-      <div class="col-12" id="topArticlesheader">
-        <i class="far fa-calendar-alt"></i> Top Articles
+
+      <div class="col-12" id="articlesFoundHeader">
+        <i class="far fa-calendar-alt"></i> Articles Found
       </div>
-      <div class="col-12" id="topArticlesbody"></div>
+
+      <div class="col-12" id="articlesFoundBody">
+        <p id="retrievedArticles"></p>
+        <p id="retrievedArticlesSec"></p>
+      </div>
+
+      <!-- <button onclick="executeJSON()">Execute</button> -->
     </div>
+
+    <script src="js/script.js"></script>
   </body>
 </html>
