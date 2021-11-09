@@ -47,6 +47,7 @@ h1 {
 
 #retrievedArticles {
   color: darkslategrey;
+  font-style: italic;-f
 }
 .form-group {
   padding: 10px;
@@ -65,4 +66,12 @@ select {
   background-color: white;
   color: #1b2b33;
   border-color: #4f6f80;
+}
+
+.StyleArticle {
+
+}
+
+.StyleArticleSec {
+background-color: #228B22		;
 }
