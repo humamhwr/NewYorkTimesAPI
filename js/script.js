@@ -10,9 +10,10 @@ function executeJSON() {
   let numRecords = document.getElementById("numRecords").value;
   // Randomize page number to choose a random article
   let pageNumber = getRandomInt(10);
+  // let pageNumber = 1;
 
   // URL to API JSON file
-  const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=${year}0101&page=${pageNumber}&api-key=SAiMm3TGavwAZGVZQQXSSYnpj8jUUIdF`;
+  const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?${year}0101&end_date=${year}1231&page=${pageNumber}&api-key=SAiMm3TGavwAZGVZQQXSSYnpj8jUUIdF`;
 
   $.getJSON(url, function (data) {
     //success
