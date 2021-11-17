@@ -69,9 +69,10 @@ select {
 }
 
 .StyleArticle {
-
+margin-bottom:5px;
 }
 
 .StyleArticleSec {
-background-color: #228B22		;
+background-color: #cccccc;
+
 }
